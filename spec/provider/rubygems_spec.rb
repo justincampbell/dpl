@@ -72,7 +72,7 @@ describe DPL::Provider::RubyGems do
       provider.options.update(:host => 'http://example.com')
       provider.context.should_receive(:shell).with("gem build example.gemspec")
       Dir.should_receive(:glob).with('example-*.gem').and_yield('File')
-      ::Gems.should_receive(:push).with('Test file', host='http://example.com').and_return('Yes!')
+      ::Gems.should_receive(:push).with('Test file', 'http://example.com').and_return('Yes!')
     end
   end
 
